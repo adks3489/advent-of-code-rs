@@ -10,6 +10,14 @@ fn day1() {
         }
     }
     println!("{}", count);
+
+    let mut count = 0;
+    for i in 3..lines.len() {
+        if lines[i].parse::<i32>().unwrap() > lines[i - 3].parse::<i32>().unwrap() {
+            count = count + 1;
+        }
+    }
+    println!("{}", count);
 }
 
 fn main() {
