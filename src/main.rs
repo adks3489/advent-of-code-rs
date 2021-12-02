@@ -49,13 +49,17 @@ fn day2() {
 
     let mut horizontal_position = 0;
     let mut depth = 0;
+    let mut aim = 0;
     lines
         .iter()
         .map(|l| Command::new(l))
         .for_each(|c| match c.direction {
-            Direction::Forward => horizontal_position += c.distance,
-            Direction::Up => depth -= c.distance,
-            Direction::Down => depth += c.distance,
+            Direction::Forward => {
+                horizontal_position += c.distance;
+                depth += aim * c.distance;
+            }
+            Direction::Up => aim -= c.distance,
+            Direction::Down => aim += c.distance,
         });
     println!("{}", horizontal_position * depth);
 }
