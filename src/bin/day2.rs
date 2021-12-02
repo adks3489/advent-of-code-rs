@@ -1,25 +1,5 @@
 use std::fs;
 
-fn day1() {
-    let contnets = fs::read_to_string("input/day1.txt").unwrap();
-    let lines: Vec<&str> = contnets.lines().collect();
-    let mut count = 0;
-    for i in 1..lines.len() {
-        if lines[i].parse::<i32>().unwrap() > lines[i - 1].parse::<i32>().unwrap() {
-            count = count + 1;
-        }
-    }
-    println!("{}", count);
-
-    let mut count = 0;
-    for i in 3..lines.len() {
-        if lines[i].parse::<i32>().unwrap() > lines[i - 3].parse::<i32>().unwrap() {
-            count = count + 1;
-        }
-    }
-    println!("{}", count);
-}
-
 enum Direction {
     Forward,
     Up,
@@ -43,7 +23,8 @@ impl Command {
         }
     }
 }
-fn day2() {
+
+fn main() {
     let contnets = fs::read_to_string("input/day2.txt").unwrap();
     let lines: Vec<&str> = contnets.lines().collect();
 
@@ -62,8 +43,4 @@ fn day2() {
             Direction::Down => aim += c.distance,
         });
     println!("{}", horizontal_position * depth);
-}
-
-fn main() {
-    day2();
 }
