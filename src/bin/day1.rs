@@ -1,23 +1,11 @@
 use std::fs;
 
-fn count_larger(depths: &Vec<u32>) -> i32 {
-    let mut count = 0;
-    for i in 1..depths.len() {
-        if depths[i] > depths[i - 1] {
-            count = count + 1;
-        }
-    }
-    count
+fn count_larger(depths: &Vec<u32>) -> usize {
+    depths.windows(2).filter(|d| d[1] > d[0]).count()
 }
 
-fn count_larger_window(depths: &Vec<u32>) -> i32 {
-    let mut count = 0;
-    for i in 3..depths.len() {
-        if depths[i] > depths[i - 3] {
-            count = count + 1;
-        }
-    }
-    count
+fn count_larger_window(depths: &Vec<u32>) -> usize {
+    depths.windows(4).filter(|d| d[3] > d[0]).count()
 }
 
 fn main() {
