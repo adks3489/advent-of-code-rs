@@ -18,7 +18,7 @@ jobs:
         with:
           userid: 1706516                          # your user id, see setup on how to obtain
           session: ${{ secrets.AOC_SESSION }}    # secret containing session code, see setup on how to obtain
-          
+          file: 'README.md'
 #         Optional inputs:
 #         
 #         year: 2021                                                                                     # The year for which stats should be retrieved
