@@ -21,8 +21,7 @@ impl Board {
             rows.iter()
                 .skip(1)
                 .map(|row| {
-                    row.split(" ")
-                        .filter(|s| !s.is_empty())
+                    row.split_whitespace()
                         .map(|c| Slot::new(c.parse().unwrap()))
                         .collect::<Vec<_>>()
                 })
