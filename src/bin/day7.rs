@@ -1,39 +1,34 @@
 use std::fs;
 
 fn calc(data: &Vec<&str>) -> usize {
-    let pos: Vec<_> = data.iter().map(|n| n.parse::<i32>().unwrap()).collect();
-    let min = *pos.iter().min().unwrap();
-    let max = *pos.iter().max().unwrap();
-    (min..=max)
-        .map(|i| pos.iter().map(|p| ((p - i).abs() as usize)).sum())
-        .min()
-        .unwrap()
+    let mut pos: Vec<_> = data.iter().map(|n| n.parse::<i32>().unwrap()).collect();
+    pos.sort();
+    pos.iter()
+        .map(|p| ((p - pos[pos.len() / 2]).abs() as usize))
+        .sum()
 }
 
 fn calc2(data: &Vec<&str>) -> usize {
-    let pos: Vec<_> = data.iter().map(|n| n.parse::<i32>().unwrap()).collect();
-    let min = *pos.iter().min().unwrap();
-    let max = *pos.iter().max().unwrap();
-    (min..=max)
-        .map(|i| {
-            pos.iter()
-                .map(|p| {
-                    let diff = (p - i).abs() as usize;
-                    (1 + diff) * diff / 2
-                })
-                .sum()
-        })
-        .min()
-        .unwrap()
+    let pos: Vec<i32> = data.iter().map(|n| n.parse::<i32>().unwrap()).collect();
+    let mean = pos.iter().sum::<i32>() / pos.len() as i32;
+    let spend = |n: i32| -> usize {
+        pos.iter()
+            .map(|p| {
+                let diff = (p - n).abs() as usize;
+                (1 + diff) * diff / 2
+            })
+            .sum()
+    };
+    spend(mean).min(spend(mean + 1))
 }
 
 fn main() {
     let contnets = fs::read_to_string("input/day7.txt").unwrap();
-    let lines: Vec<&str> = contnets.lines().next().unwrap().split(",").collect();
-    let n = calc(&lines);
+    let data: Vec<&str> = contnets.lines().next().unwrap().split(",").collect();
+    let n = calc(&data);
     println!("Part1: {}", n);
 
-    let n = calc2(&lines);
+    let n = calc2(&data);
     println!("Part2: {}", n);
 }
 
