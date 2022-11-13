@@ -80,7 +80,7 @@ fn calc(data: &str, time: usize) -> usize {
 }
 
 fn main() {
-    let contnets = fs::read_to_string("input/day20.txt").unwrap();
+    let contnets = fs::read_to_string("2021/input/day20.txt").unwrap();
     let n = calc(&contnets, 2);
     println!("Part1: {} 5225", n);
 

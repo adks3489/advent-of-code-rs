@@ -23,7 +23,7 @@ fn simulation(days: i32, ages: &Vec<&str>) -> usize {
 }
 
 fn main() {
-    let contnets = fs::read_to_string("input/day6.txt").unwrap();
+    let contnets = fs::read_to_string("2021/input/day6.txt").unwrap();
     let line: Vec<&str> = contnets.lines().next().unwrap().split(",").collect();
     println!("Part1: {}", simulation(80, &line));
 

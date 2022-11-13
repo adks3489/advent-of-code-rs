@@ -67,7 +67,7 @@ fn parse(data: &str) -> (Vec<char>, Vec<Rule>) {
 }
 
 fn main() {
-    let contnets = fs::read_to_string("input/day14.txt").unwrap();
+    let contnets = fs::read_to_string("2021/input/day14.txt").unwrap();
     let n = calc(&contnets, 10);
     println!("Part1: {}", n);
 

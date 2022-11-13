@@ -23,7 +23,7 @@ fn calc2(data: &Vec<&str>) -> usize {
 }
 
 fn main() {
-    let contnets = fs::read_to_string("input/day7.txt").unwrap();
+    let contnets = fs::read_to_string("2021/input/day7.txt").unwrap();
     let data: Vec<&str> = contnets.lines().next().unwrap().split(",").collect();
     let n = calc(&data);
     println!("Part1: {}", n);

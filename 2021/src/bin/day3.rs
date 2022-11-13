@@ -68,7 +68,7 @@ fn life_support_rating(data: &Vec<&str>) -> (u32, u32) {
 }
 
 fn main() {
-    let contnets = fs::read_to_string("input/day3.txt").unwrap();
+    let contnets = fs::read_to_string("2021/input/day3.txt").unwrap();
     let lines: Vec<&str> = contnets.lines().collect();
     let n = power_consumption(&lines);
     println!("gamma: {} epsilon: {}", n.0, n.1);

@@ -35,7 +35,7 @@ fn calc_position(commands: impl Iterator<Item = Command>) -> (i32, i32) {
 }
 
 fn main() {
-    let contnets = fs::read_to_string("input/day2.txt").unwrap();
+    let contnets = fs::read_to_string("2021/input/day2.txt").unwrap();
     let lines: Vec<&str> = contnets.lines().collect();
 
     let (horizontal_position, depth) = calc_position(lines.iter().map(|l| Command::new(l)));

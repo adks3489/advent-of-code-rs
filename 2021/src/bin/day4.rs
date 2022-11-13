@@ -97,7 +97,7 @@ fn guess_last_win(data: &Vec<&str>) -> i32 {
 }
 
 fn main() {
-    let contnets = fs::read_to_string("input/day4.txt").unwrap();
+    let contnets = fs::read_to_string("2021/input/day4.txt").unwrap();
     let lines: Vec<&str> = contnets.lines().collect();
 
     let score = guess_first_win(&lines);

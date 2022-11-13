@@ -333,7 +333,7 @@ fn calc2(data: &str) -> i32 {
 }
 
 fn main() {
-    let contents = fs::read_to_string("input/day19.txt").unwrap();
+    let contents = fs::read_to_string("2021/input/day19.txt").unwrap();
     let n = calc(&contents);
     println!("Part1: {}", n);
 

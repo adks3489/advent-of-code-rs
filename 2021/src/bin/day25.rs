@@ -77,7 +77,7 @@ fn calc2(data: &Vec<&str>) -> i32 {
 }
 
 fn main() {
-    let contnets = fs::read_to_string("input/day25.txt").unwrap();
+    let contnets = fs::read_to_string("2021/input/day25.txt").unwrap();
     let lines: Vec<&str> = contnets.lines().collect();
     let n = calc(&lines);
     println!("Part1: {}", n);

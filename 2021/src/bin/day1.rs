@@ -9,7 +9,7 @@ fn count_larger_window(depths: &Vec<u32>) -> usize {
 }
 
 fn main() {
-    let contnets = fs::read_to_string("input/day1.txt").unwrap();
+    let contnets = fs::read_to_string("2021/input/day1.txt").unwrap();
     let depths: Vec<u32> = contnets.lines().map(|w| w.parse().unwrap()).collect();
 
     println!("larger than previous: {}", count_larger(&depths));

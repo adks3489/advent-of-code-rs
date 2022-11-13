@@ -70,7 +70,7 @@ fn fold_paper(folding: &Vec<(&str, u32)>, dots: &mut HashSet<(u32, u32)>, times:
 }
 
 fn main() {
-    let contnets = fs::read_to_string("input/day13.txt").unwrap();
+    let contnets = fs::read_to_string("2021/input/day13.txt").unwrap();
     let n = calc(&contnets);
     println!("Part1: {}", n);
 
