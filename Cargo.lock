@@ -3,6 +3,10 @@
 version = 3
 
 [[package]]
+name = "aoc2020"
+version = "0.1.0"
+
+[[package]]
 name = "aoc2021"
 version = "0.1.0"
 dependencies = [
