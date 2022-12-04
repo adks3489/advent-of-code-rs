@@ -28,6 +28,7 @@ dependencies = [
 [[package]]
 name = "aoc2022"
 version = "0.1.0"
+ "itertools",
 
 [[package]]
 name = "either"
