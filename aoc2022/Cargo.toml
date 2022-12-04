@@ -7,3 +7,4 @@ version = "0.1.0"
 
 [dependencies]
 itertools = "0.10.5"
+parse-display = "0.6.0"
